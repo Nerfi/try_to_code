@@ -1,0 +1,4 @@
+<%= render 'form', gym: @gym %>
+<% if policy(Gym).create? %>
+  <%= link_to "New Gym", new_gym_path %>
+<% end %>

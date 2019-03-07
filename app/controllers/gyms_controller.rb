@@ -1,12 +1,16 @@
 class GymsController < ApplicationController
+  before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gyms =  Gym.all
-
+     @gyms = policy_scope(Gym).order(created_at: :desc)
+    #@gyms =  Gym.all with pundit the index method in the controller you're using pundit change a bit
   end
 
+
+
+
   def show
-    @gym = Gym.find(paramas[:id])
+    #@gym = Gym.find(params[:id])
 
   end
 
@@ -17,14 +21,16 @@ class GymsController < ApplicationController
   end
 
   def edit
-    @gym = Gym.find(params[:id])
+    #esta linea la hemos sustituido por set_gym method
+   # @gym = Gym.find(params[:id])
 
   end
 
   def create
-    @gym =  Gym.new(params[:gym])
+    @gym =  Gym.new(gym_params)
     @gym.save
     @gym.user = current_user
+    authorize @gym
 
     if @gym.save
       redirect_to @gym, notice: 'your gym was create,thanks!'
@@ -34,7 +40,7 @@ class GymsController < ApplicationController
   end
 
   def upadate
-    @gym = Gym.find(params[:id])
+    #@gym = Gym.find(params[:id])
     @gym.update(params[:gym])
 
     if @gym.update(gym_params)
@@ -52,6 +58,12 @@ end
   end
 
   private
+
+  def set_gym
+    @gym = Gym.find(params[:id])
+    authorize @gym
+
+  end
 
   def gym_params
     params.require(:gym).permit(:name, :description, :pricing, :user_id)
