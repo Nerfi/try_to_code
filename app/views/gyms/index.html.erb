@@ -3,10 +3,15 @@
 
 <% @gyms.each do |gym| %>
 <ul>
-  <li> <%= gym.name %>    </li>
+  <li> <%= gym.name %>  </li>
 
  <li><%= gym.description %> </li>
  <li> <%= gym.pricing %></li>
 </ul>
+
+ <% if policy(gym).edit? %>
+   <%= link_to "Update", edit_gym_path(gym) %>
+  <% end %>
+
 
 <% end %>
