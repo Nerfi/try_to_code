@@ -1,17 +1,32 @@
+<p id="notice"><%= notice %></p>
 <h1>here you can have a look to our gyms around the world</h1>
 
 
 <% @gyms.each do |gym| %>
 <ul>
-  <li> <%= gym.name %>  </li>
+   <%= link_to gym.name, gym_path(gym) %>
+
 
  <li><%= gym.description %> </li>
  <li> <%= gym.pricing %></li>
 </ul>
 
+<% if policy(gym).create? %>
+  <%= link_to "New restaurant WITH Pundiit OKEY", new_gym_path %>
+<% end %>
+
  <% if policy(gym).edit? %>
    <%= link_to "Update", edit_gym_path(gym) %>
   <% end %>
+  <td>
+    <% if policy(gym).destroy? %>
+    <%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure ?'} %>
+
+    <% end %>
+  </td>
 
 
 <% end %>
+
+
+
