@@ -1,7 +1,7 @@
 
 .home-banner {
-  background: linear-gradient( rgba(255,255,200,0), rgba(255,200,200,1)), url("try_to_code.jpg");
-  background-image: linear-gradient url("try_to_code.jpg");
+  // background: linear-gradient( rgba(255,255,200,0), rgba(255,200,200,1)), url("try_to_code.jpg");
+  background-image:url("try_to_code.jpg");
   background-size: cover !important;
   height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */
