@@ -11,7 +11,10 @@ gem 'redis'
 gem 'pundit'
 #vamos a comentar la gema por ahora, ya que aparece twice
 #gem 'dotenv-rails', groups: [:development, :test]
+#gem to add img
 gem 'cloudinary', '~> 1.9.1'
+#this gem is not in the lecture but in the video
+gem 'figaro'
 
 
 gem 'autoprefixer-rails'
