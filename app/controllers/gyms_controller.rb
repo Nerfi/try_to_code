@@ -66,7 +66,7 @@ end
   end
 
   def gym_params
-    params.require(:gym).permit(:name, :description, :pricing, :user_id)
+    params.require(:gym).permit(:name, :description, :pricing, :user_id, :photo)
 
   end
 end
