@@ -33,15 +33,16 @@ class GymsController < ApplicationController
     authorize @gym
 
     if @gym.save
-      redirect_to @gym, notice: 'your gym was create,thanks!'
+      redirect_to @gym , notice: 'your gym was created thanks!'
     else
       render :new
     end
   end
 
-  def upadate
+  def update
     #@gym = Gym.find(params[:id])
-    @gym.update(params[:gym])
+    #@gym.update(params[:gym])
+    @gym.update(gym_params)
 
     if @gym.update(gym_params)
       redirect_to @gym, notice: 'your gym was updated, thanks!'
@@ -53,7 +54,7 @@ end
   def destroy
     #wacth out with this method
     @gym.destroy
-    redirect_to :gyms_path
+    redirect_to gyms_path
 
   end
 

@@ -31,6 +31,30 @@
   </div>
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="card"
+        <% @gyms.each do |gym| %>
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @gym.photo, height: 300, width: 400, crop: :fill %>')">
+      <div class="card-category">Popular</div>
+      <div class="card-description">
+      <h2>Some stuff</h2>
+      <p>Very cool stuff, useful and smart</p>
+    </div>
+     <a class="card-link" href="#" ></a>
+     </div>
+
+       <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
 <!-- no tiene sentido desplegar la imagen aqui, es solo para saber que funciona bine -->
 
 <%= cl_image_tag("qd2lujxd5fmwdzhd4eyc.jpg",
@@ -40,4 +64,5 @@
 <!-- for face detection -->
 <%= cl_image_tag("qd2lujxd5fmwdzhd4eyc.jpg",
       width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
 

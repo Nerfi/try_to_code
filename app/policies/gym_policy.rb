@@ -21,11 +21,13 @@ class GymPolicy < ApplicationPolicy
   end
 
   def update?
+  #return true
     record.user == user
 
   end
 
   def destroy?
+    return true
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
     # - user:   the `current_user` signed in with Devise.
