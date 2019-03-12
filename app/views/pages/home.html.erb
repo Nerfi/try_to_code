@@ -1,42 +1,8 @@
 <div class="home-banner">
-
-<div class="container">
-  <div class="row">
-   <div class="col-sm-offset-4 col-sm-4 col-xs-6 col-xs-offset-4">
-
-
-
-
-
-
-
-    </div>
-  </div>
-</div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card"
-          <% @gyms.each do |gym| %>
-    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path gym.photo, height: 300, width: 400, crop: :fill %>')">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
-<% end %>
+    <%= render 'shared/cards' %>
 
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    </div>
-  </div>
-</div>
+ </div>
+

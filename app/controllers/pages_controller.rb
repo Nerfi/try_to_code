@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
 
   def home
+    @gyms = Gym.all
   end
+
 end
