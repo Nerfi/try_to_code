@@ -14,3 +14,8 @@
   <strong> Price:</strong>
   <%= @gym.pricing %>
 </p>
+
+<!-- once pundit is set up we can use the normal links like 'Edit' and so on , because when we set up pundit in the gym policy he takes care of all  -->
+<%= link_to 'Edit', edit_gym_path(@gym) %> |
+<%= link_to 'Back', gyms_path %>
+
