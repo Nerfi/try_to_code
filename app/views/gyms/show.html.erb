@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 <p>
 
+<div class="container">
+  <div class="row">
+    <div class=" col-sm-offset-4">
   <%= cl_image_tag @gym.photo, height: 300, width: 400, crop: :fill %> <br>
-
   <strong>Name:</strong>
   <%= @gym.name %>
 </p>
@@ -14,8 +16,11 @@
   <strong> Price:</strong>
   <%= @gym.pricing %>
 </p>
+   <%= link_to 'Edit', edit_gym_path(@gym) %> |
+   <%= link_to 'Back', gyms_path %>
+  </div>
+ </div>
+</div>
 
 <!-- once pundit is set up we can use the normal links like 'Edit' and so on , because when we set up pundit in the gym policy he takes care of all  -->
-<%= link_to 'Edit', edit_gym_path(@gym) %> |
-<%= link_to 'Back', gyms_path %>
 
