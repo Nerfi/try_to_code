@@ -1,47 +1,59 @@
 <p id="notice"><%= notice %></p>
-<h1>here you can have a look to our gyms around the world</h1>
+<h1>Here you can have a look to the gyms around the world</h1>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <% @gyms.each do |gym| %>
-    <ul>
-   <%= link_to gym.name, gym_path(gym) %>
+    <% @gyms.each do |gym| %>
+    <div class="col-lg-4 col-xs-4 col-sm-4 col-xs-6 ">
+      <div class="card"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path gym.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="card-category"><%= link_to gym.name, gym_path(gym) %></div>
+        <div class="card-description">
+          <h2><%= gym.description %></h2>
+          <p><%= gym.pricing  %></p>
+        </div>
+        <a class="card-link"> </a>
 
 
-  <li><%= gym.description %> </li>
-  <li> <%= gym.pricing %></li>
-  </ul>
+        </div>
 
-  <% if policy(gym).create? %>
-  <%= link_to "New restaurant  Pundit OKEY", new_gym_path %>
-  <% end %>
+         <% if policy(gym).create? %>
+         <%= link_to "New Gym", new_gym_path %>
+      <% end %>
 
-    <% if policy(gym).edit? %>
-   <%= link_to "Update", edit_gym_path(gym) %>
-   <% end %>
-    <td>
-    <% if policy(gym).destroy? %>
-    <%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure ?'} %>
+      <% if policy(gym).edit? %>
+        <%= link_to "Update", edit_gym_path(gym) %>
+     <% end %>
+     <td>
+       <% if policy(gym).destroy? %>
+       <%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure ?'} %>
+
+      <% end %>
+    </td>
+
+
+    </div>
+
+
+
 
      <% end %>
-    </td>
-   <% end %>
-    </div>
+
+
   </div>
+
+
 </div>
 
 
 
 
-<!-- no tiene sentido desplegar la imagen aqui, es solo para saber que funciona bine -->
-
-<%= cl_image_tag("qd2lujxd5fmwdzhd4eyc.jpg",
-      width: 400, height: 300, crop: :fill) %>
 
 
-<!-- for face detection -->
-<%= cl_image_tag("qd2lujxd5fmwdzhd4eyc.jpg",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+
+
+
 
 
