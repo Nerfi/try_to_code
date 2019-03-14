@@ -2,6 +2,15 @@ class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
   def index
+    @gyms = Gym.where.not(latitude: nil, longitude: nil)
+    @markers = @gyms.map do |gym|
+      {
+        lng: gym.longitude,
+        lat: gym.latitude,
+        #ojo con el comment de la liinea 11 para un futuro puede que lo necesite
+       # infoWindow: render_to_string(partial:"/flats/map_box", locals: {flat: flat})
+      }
+    end
      @gyms = policy_scope(Gym).order(created_at: :desc)
     #@gyms =  Gym.all with pundit the index method in the controller you're using pundit change a bit
   end
