@@ -16,7 +16,7 @@ gem 'cloudinary', '~> 1.9.1'
 #this gem is not in the lecture but in the video
 gem 'figaro'
 gem 'carrierwave', '~> 1.2'
-
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
