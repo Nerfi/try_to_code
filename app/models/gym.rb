@@ -8,6 +8,7 @@ class Gym < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { minimum: 15 }
   validates :pricing, presence: true
+  validates :address , presence: true
   #para poder añadir en nuestro model la foto
   mount_uploader :photo, PhotoUploader
 end
