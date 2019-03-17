@@ -8,6 +8,7 @@
     "mapbox-gl": "^0.53.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^3.2.1"
   }
 }
